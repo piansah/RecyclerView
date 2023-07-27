@@ -1,4 +1,4 @@
-package com.example.recyclerview
+package com.example.recyclerview.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.recyclerview.DetailActivity
+import com.example.recyclerview.model.MyContact
 import com.example.recyclerview.databinding.CardviewLayoutBinding
+import com.example.recyclerview.model.MyDisease
 
-class CardViewAdapter(private val context : Context, private val listStudent : ArrayList<MyContact>) : RecyclerView.Adapter<CardViewAdapter.ViewHolder>() {
+class CardViewAdapter(private val context : Context, private val listDisease : ArrayList<MyDisease>) : RecyclerView.Adapter<CardViewAdapter.ViewHolder>() {
     class ViewHolder(val binding : CardviewLayoutBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -17,18 +20,19 @@ class CardViewAdapter(private val context : Context, private val listStudent : A
     }
 
     override fun getItemCount(): Int {
-        return listStudent.size
+        return listDisease.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.txtNama.text = listStudent[position].nama
-        Glide.with(holder.itemView.context).load(listStudent[position].foto).into(holder.binding.images)
+        holder.binding.txtPenyakit.text = listDisease[position].penyakit
+        Glide.with(holder.itemView.context).load(listDisease[position].foto).into(holder.binding.images)
         holder.binding.CardView.setOnClickListener {
             val inten = Intent(context, DetailActivity::class.java)
-            inten.putExtra("nim", listStudent[position].nim)
-            inten.putExtra("nama", listStudent[position].nama)
-            inten.putExtra("telepon", listStudent[position].nomorTelepon)
-            inten.putExtra("foto", listStudent[position].foto)
+            inten.putExtra("penyakit", listDisease[position].penyakit)
+            inten.putExtra("penjelasan", listDisease[position].penjelasanPenyakit)
+            inten.putExtra("Pencegahan", listDisease[position].penjelasanPencegahan)
+            inten.putExtra("Diagnosis", listDisease[position].penjelasanDiagnosis)
+            inten.putExtra("Perawatan", listDisease[position].penjelasanPerawatan)
             context.startActivity(inten)
         }
     }

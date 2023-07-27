@@ -1,4 +1,4 @@
-package com.alifalpian.expertsystem.model
+package com.example.recyclerview.model
 
 data class MyDisease(
 

@@ -1,4 +1,4 @@
-package com.example.recyclerview
+package com.example.recyclerview.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import com.bumptech.glide.Glide
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recyclerview.DetailActivity
+import com.example.recyclerview.model.MyContact
 import com.example.recyclerview.databinding.GridLayoutBinding
 
 

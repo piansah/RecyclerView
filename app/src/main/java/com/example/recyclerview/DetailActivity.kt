@@ -15,15 +15,17 @@ class DetailActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val nim = intent.getStringExtra("nim")
-        val nama = intent.getStringExtra("nama")
-        val telepon = intent.getStringExtra("telepon")
-        val foto = intent.getStringExtra("foto")
+        val penyakit = intent.getStringExtra("penyakit")
+        val penjelasanPenyakit = intent.getStringExtra("penjelasanPenjakit")
+        val penjelasanPencegahan = intent.getStringExtra("pencegahan")
+        val penjelasanDiagnosis = intent.getStringExtra("diagnosis")
+        val penjelasanPerawatan = intent.getStringExtra("perawatan")
 
-        binding.txtNim.text = nim
-        binding.txtNama.text = nama
-        binding.NomorTelepon.text = telepon
-        Glide.with(this).load(foto).into(binding.images)
+        binding.txtPenyakit.text = penyakit
+        binding.txtPenjelasanPenyakit.text = penjelasanPenyakit
+        binding.txtPenjelasanPencegahan.text = penjelasanPencegahan
+        binding.txtPenjelasanDiagnosis.text = penjelasanDiagnosis
+        binding.txtPenjelasanPerawatan.text = penjelasanPerawatan
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

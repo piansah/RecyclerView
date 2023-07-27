@@ -1,10 +1,12 @@
-package com.example.recyclerview
+package com.example.recyclerview.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recyclerview.DetailActivity
+import com.example.recyclerview.model.MyContact
 import com.example.recyclerview.databinding.ListviewLayoutBinding
 
 class ListViewAdapter(private val context : Context,  private val listStudent : ArrayList<MyContact>) : RecyclerView.Adapter<ListViewAdapter.ViewHolder>() {
